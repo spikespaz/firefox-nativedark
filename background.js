@@ -4,10 +4,8 @@ browser.runtime.getPlatformInfo().then(info => {
 
     if (info.os === "win") {
         accentcolor = "-moz-win-accentcolor";
-        accentcolortext = "-moz-win-accentcolortext";
     } else {
         accentcolor = "#394145";
-        accentcolortext = "#fff";
     }
 
     // Add a listener to update the theme on newly created windows
@@ -32,7 +30,7 @@ browser.runtime.getPlatformInfo().then(info => {
                     headerURL: "",
                 },
                 colors: {
-                    accentcolor: "#222",
+                    accentcolor: "#222", // A little lighter than the default black
                     textcolor: "#fff",
                     toolbar: "#333",
                     toolbar_text: "#fff"
@@ -45,11 +43,11 @@ browser.runtime.getPlatformInfo().then(info => {
                 },
                 colors: {
                     accentcolor: accentcolor,
-                    textcolor: accentcolortext,
+                    textcolor: "#fff",
                     toolbar: "#00000040", // 25% darker than accent
-                    toolbar_text: accentcolortext,
+                    toolbar_text: "#fff",
                     toolbar_field: "#00000040", // 50% darker than accent
-                    toolbar_field_text: accentcolortext
+                    toolbar_field_text: "#fff"
                 }
             });
         }
