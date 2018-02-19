@@ -1,7 +1,7 @@
 # Firefox-NativeDark
 **Dynamic theme for Firefox Quantum that colorizes the title bar, tabs, and URL bar based on your Windows accent color.**
 
-[![Add to Firefox](images/button.png)](https://addons.mozilla.org/firefox/downloads/file/867786/native_dark-1.1.0-an+fx.xpi?src=dp-btn-primary)
+[![Add to Firefox](images/button.png)](https://addons.mozilla.org/firefox/downloads/file/868099/native_dark-1.2-an+fx.xpi?src=dp-btn-primary)
 
 Get it at Add-ons for Firefox: https://addons.mozilla.org/en-US/firefox/addon/native-dark/
 
@@ -10,21 +10,19 @@ The theme was originally meant to work with just dark colors, (specifically `#39
 ## Examples
 **Below are examples of 11 different accent colors. Only the first is a custom color.**
 
-The tabs and body of the toolbar is 25% darker than the accent color, and the inside of the omni bar is 50% darker than the accent color. The text color is determined by Windows as well.
+The tabs and body of the toolbar is 25% darker than the accent color, and the inside of the omni bar is 50% darker than the accent color. The text will always remain pure white, I have found that this looks best.
 
 ![Titlebar Examples](images/titlebars.png)
 
 ## Usage
-The theme should work with just about any accent colors, however, if you don't have a high resolution display to smooth out the black text, the font will look a little funny on lighter colors. Try to keep the accent color in windows dark enough so that the text color defaults to white.
+The theme should work with just about any accent colors, however, the font will look a little funny on super light colors. Try to keep the accent color in Windows dark enough so that the text color doesn't conflict with the background.
 
 Make sure that you have a good accent color selected from the palette in `Windows > Settings (Gear) > Personalization > Colors`.
 
 ![Settings Screenshot](images/settings.png)
 
 ## Issues
-~~This is really only meant to work in Windows 10. If you try it in another operating system, let me know what happens for sure, but don't come to me complaining when things break.~~
-
-I've added a default color for other platforms besides Windows. It won't adapt to your OS accents, but you do get a nice dark theme. Still, don't come complaining to me if it breaks.
+This is really only meant to work in Windows 10. On other systems, it just defaults to the dark theme shown in the top example. **Please don't ask me why it doesn't sync with your theme in Linux!**
 
 In the default Light and Dark themes, there is a thin blue line above the tabs. I like that, and I would like to have it on this theme, but I couldn't find anything in the documentation (which is very slim) about it.
 
