@@ -1,11 +1,20 @@
+// Add a listener to update the theme on newly created windows
 browser.windows.onCreated.addListener(themeWindow);
 
+// Add a listener for when the focus changes, update all the window themes
+browser.windows.onFocusChanged.addListener(() => {
+  browser.windows.getAll().then(windows => windows.forEach(themeWindow));
+});
+
 // Theme all currently open windows
-browser.windows.getAll().then(wins => wins.forEach(themeWindow));
+browser.windows.getAll().then(windows => windows.forEach(themeWindow));
 
 function themeWindow(window) {
-  // Check if the window is in private browsing and use the full dark theme
-  if (window.incognito) {
+  if (!window.focused) {
+    // Check if the window isn't in focus, reset it
+    browser.theme.reset(window.id);
+  } else if (window.incognito) {
+    // Check if the window is in private browsing and use the full dark theme
     browser.theme.update(window.id, {
       images: {
         headerURL: "",
