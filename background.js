@@ -11,8 +11,8 @@ function themeWindow(window) {
         headerURL: "",
       },
       colors: {
-        accentcolor: "black",
-        textcolor: "white",
+        accentcolor: "#222",
+        textcolor: "#fff",
         toolbar: "#333",
         toolbar_text: "#fff"
       }
