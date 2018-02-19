@@ -1,0 +1,7 @@
+.tab-line {
+    -moz-box-ordinal-group: 1; /* Make the line appear on top */
+}
+
+.tab-line[selected=true] {
+    background-color: #0A84FF !important; /* Set the line color to the default blue */
+}
