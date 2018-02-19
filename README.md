@@ -24,8 +24,40 @@ Make sure that you have a good accent color selected from the palette in `Window
 ## Issues
 This is really only meant to work in Windows 10. On other systems, it just defaults to the dark theme shown in the top example. **Please don't ask me why it doesn't sync with your theme in Linux!**
 
-In the default Light and Dark themes, there is a thin blue line above the tabs. I like that, and I would like to have it on this theme, but I couldn't find anything in the documentation (which is very slim) about it.
-
 When focusing on a browser window, there is a small delay in loading the toolbar, causing a flicker effect when the tabs load colors before the toolbar. This looks bad, and needs to be fixed, but it may just be a browser limitation.
 
 Please submit issues or suggestions to the [Issues page on the GitHub repository](https://github.com/spikespaz/Firefox-NativeDark/issues).
+
+# Optional
+When the background for the title bar is set, the pretty blue line above active tabs is lost. Unfortunately, I have yet to find a way to fix this within the theme itself. The one way to fix it us by adding a custom `userChrome.css` to your profile directory.
+
+This is what it changes, top is before, bottom is after.
+
+![Tab Line Change](images/userchrome.png)
+
+**In short, here is what you need to do to add this to your profile.**
+
+1. Open `about:support` in the URL bar.
+2. Under `Application Basics`, find `Profile Folder` and click the button that says `Open Folder`.
+3. Download this repository by clicking the green `Clone or download > Download ZIP` button on [Github](https://github.com/spikespaz/Firefox-NativeDark).
+    * Or use this [direct link](https://github.com/spikespaz/Firefox-NativeDark/archive/master.zip).
+4. Find the downloaded archive, open it, and extract the folder called `chrome`.
+5. Move the extracted `chrome` into the profile folder that you opened earlier.
+
+*You may need to restart firefox for the stylesheet to take effect.*
+
+Alternatively, copy the code below and use it as a base for modifications in your `userChrome.css`.
+
+    .tab-line {
+        -moz-box-ordinal-group: 1;
+    }
+
+    .tab-line[selected=true] {
+        background-color: #0A84FF !important;
+    }
+
+For example, change `-moz-box-ordinal-group` to `2` to make the active indicator line appear on the bottom of the tab, or change the hex value `#0A84FF` for a different color.
+
+There's a great resource for references on what can be put into `userChrome.css` at the [UserChrome-Tweaks](https://github.com/Timvde/UserChrome-Tweaks) community repository, or the [FirefoxCSS Subreddit](https://www.reddit.com/r/FirefoxCSS/).
+
+For more information about what `userChrome.css` is, see the [website for it](https://www.userchrome.org/).
