@@ -1,6 +1,10 @@
 # Firefox-NativeDark
 **Dynamic theme for Firefox Quantum that colorizes the title bar, tabs, and URL bar based on your Windows accent color.**
 
+[![Add to Firefox](button.png)](https://addons.mozilla.org/firefox/downloads/file/867786/native_dark-1.1.0-an+fx.xpi?src=dp-btn-primary)
+
+Get it at Add-ons for Firefox: https://addons.mozilla.org/en-US/firefox/addon/native-dark/
+
 The theme was originally meant to work with just dark colors, (specifically `#394145`, the darkest color that Windows allows) but while I was making the script to get the system accent colors, the only way to create variations was to create transparent layers of black over top. I accidentally discovered that it would work with other themes, and proceeded to put the below image together.
 
 ## Examples
