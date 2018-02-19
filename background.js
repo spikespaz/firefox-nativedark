@@ -27,7 +27,7 @@ function themeWindow(window) {
         textcolor: "-moz-win-accentcolortext",
         toolbar: "#00000040", // 25% darker than accent
         toolbar_text: "-moz-win-accentcolortext",
-        toolbar_field: "#0000007f", // 50% darker than accent
+        toolbar_field: "#00000060", // 37.5% darker than accent
         toolbar_field_text: "-moz-win-accentcolortext"
       }
     });
