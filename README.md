@@ -48,13 +48,15 @@ This is what it changes, top is before, bottom is after.
 
 Alternatively, copy the code below and use it as a base for modifications in your `userChrome.css`.
 
-    .tab-line {
-        -moz-box-ordinal-group: 1;
-    }
+```css
+.tab-line {
+    -moz-box-ordinal-group: 1;
+}
 
-    .tab-line[selected=true] {
-        background-color: #0A84FF !important;
-    }
+.tab-line[selected=true] {
+    background-color: #0A84FF !important;
+}
+```
 
 For example, change `-moz-box-ordinal-group` to `2` to make the active indicator line appear on the bottom of the tab, or change the hex value `#0A84FF` for a different color.
 
