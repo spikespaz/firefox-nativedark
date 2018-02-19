@@ -18,7 +18,9 @@ Make sure that you have a good accent color selected from the palette in `Window
 ![Settings Screenshot](settings.png)
 
 ## Issues
-This is really only meant to work in Windows 10. If you try iit in another operating system, let me know what happens for sure, but don't come to me complaining when things break.
+~~This is really only meant to work in Windows 10. If you try it in another operating system, let me know what happens for sure, but don't come to me complaining when things break.~~
+
+I've added a default color for other platforms besides Windows. It won't adapt to your OS accents, but you do get a nice dark theme. Still, don't come complaining to me if it breaks.
 
 In the default Light and Dark themes, there is a thin blue line above the tabs. I like that, and I would like to have it on this theme, but I couldn't find anything in the documentation (which is very slim) about it.
 
