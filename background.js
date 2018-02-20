@@ -1,9 +1,9 @@
 // const unfocused_mode = "tabs"; // Make tabs white
-// const unfocused_mode = "title"; // Make background white and tabs accent color
+const unfocused_mode = "title"; // Make background white and tabs accent color
 // const unfocused_mode = "both"; // Set accent color to white
 // const unfocused_mode = "fade"; // Fade the tabs and URL bar
 // const unfocused_mode = "reset"; // Reset to default theme
-const unfocused_mode = "none"; // Anything else: only fade text
+// const unfocused_mode = "none"; // Anything else: only fade text
 
 function setTheme(window, colors) {
     browser.theme.update(window.id, {

@@ -24,8 +24,6 @@ Make sure that you have a good accent color selected from the palette in `Window
 ## Issues
 This is really only meant to work in Windows 10. On other systems, it just defaults to the dark theme shown in the top example. **Please don't ask me why it doesn't sync with your theme in Linux!**
 
-When focusing on a browser window, there is a small delay in loading the toolbar, causing a flicker effect when the tabs load colors before the toolbar. This looks bad, and needs to be fixed, but it may just be a browser limitation.
-
 Please submit issues or suggestions to the [Issues page on the GitHub repository](https://github.com/spikespaz/Firefox-NativeDark/issues).
 
 # Optional
