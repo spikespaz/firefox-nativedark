@@ -14,7 +14,7 @@ function setTheme(window, colors) {
 
 // Check if the platform is Windows, and if it can use the accent colors
 browser.runtime.getPlatformInfo().then(info => {
-    let accentcolor, accentcolortext
+    let accentcolor;
 
     if (info.os === "win") {
         accentcolor = "-moz-win-accentcolor";
@@ -37,51 +37,51 @@ browser.runtime.getPlatformInfo().then(info => {
         if (!window.focused) {
             // Check if the window isn't in focus, reset it
             switch (unfocused_mode) {
-                case "tabs": setTheme(window, { // Make tabs white but keep accent background
-                        accentcolor: accentcolor,
-                        textcolor: "#fff",
-                        toolbar: "#fff",
-                        toolbar_text: "#000",
-                        toolbar_field: "#F9F9FA", // Same color from the default light theme
-                        toolbar_field_text: "#000"
-                    });
-                    break;
-                case "title": setTheme(window, {
-                        accentcolor: "#fff",
-                        textcolor: "#000",
-                        toolbar: accentcolor,
-                        toolbar_text: "#fff",
-                        toolbar_field: "#00000040", // 25% darker than accent
-                        toolbar_field_text: "#fff"
-                    });
-                    break;
-                case "both": setTheme(window, {
-                        accentcolor: "#fff",
-                        textcolor: "#000",
-                        toolbar: "#0000000f", // 10% darker than white
-                        toolbar_text: "#000",
-                        toolbar_field: "#0000000f", // 20% darker than white
-                        toolbar_field_text: "#000"
-                    });
-                    break;
-                case "fade": setTheme(window, {
-                        accentcolor: accentcolor,
-                        textcolor: "#fff",
-                        toolbar: "#ffffff40", // 25% lighter than accent
-                        toolbar_text: "#fff",
-                        toolbar_field: "#ffffff40", // 50% lighter than accent
-                        toolbar_field_text: "#fff"
-                    });
-                    break;
-                case "reset": setTheme(window, { // Completely default theme colors
-                        accentcolor: "#C7C7C7",
-                        textcolor: "#000",
-                        toolbar: "#F9F9FA",
-                        toolbar_text: "#000",
-                        toolbar_field: "#fff",
-                        toolbar_field_text: "#000"
-                    });
-                    break;
+            case "tabs": setTheme(window, { // Make tabs white but keep accent background
+                accentcolor: accentcolor,
+                textcolor: "#fff",
+                toolbar: "#fff",
+                toolbar_text: "#000",
+                toolbar_field: "#F9F9FA", // Same color from the default light theme
+                toolbar_field_text: "#000"
+            });
+                break;
+            case "title": setTheme(window, {
+                accentcolor: "#fff",
+                textcolor: "#000",
+                toolbar: accentcolor,
+                toolbar_text: "#fff",
+                toolbar_field: "#00000040", // 25% darker than accent
+                toolbar_field_text: "#fff"
+            });
+                break;
+            case "both": setTheme(window, {
+                accentcolor: "#fff",
+                textcolor: "#000",
+                toolbar: "#0000000f", // 10% darker than white
+                toolbar_text: "#000",
+                toolbar_field: "#0000000f", // 20% darker than white
+                toolbar_field_text: "#000"
+            });
+                break;
+            case "fade": setTheme(window, {
+                accentcolor: accentcolor,
+                textcolor: "#fff",
+                toolbar: "#ffffff40", // 25% lighter than accent
+                toolbar_text: "#fff",
+                toolbar_field: "#ffffff40", // 50% lighter than accent
+                toolbar_field_text: "#fff"
+            });
+                break;
+            case "reset": setTheme(window, { // Completely default theme colors
+                accentcolor: "#C7C7C7",
+                textcolor: "#000",
+                toolbar: "#F9F9FA",
+                toolbar_text: "#000",
+                toolbar_field: "#fff",
+                toolbar_field_text: "#000"
+            });
+                break;
             }
         } else if (window.incognito) {
             // Check if the window is in private browsing and use the full dark theme
