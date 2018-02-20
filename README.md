@@ -63,3 +63,13 @@ For example, change `-moz-box-ordinal-group` to `2` to make the active indicator
 There's a great resource for references on what can be put into `userChrome.css` at the [UserChrome-Tweaks](https://github.com/Timvde/UserChrome-Tweaks) community repository, or the [FirefoxCSS Subreddit](https://www.reddit.com/r/FirefoxCSS/).
 
 For more information about what `userChrome.css` is, see the [website for it](https://www.userchrome.org/).
+
+# Unfocused
+By request of two users (and probably unspoken by several others), I have added more modes for unfocused Windows.
+Among these are `Tabs`, `Title`, `Both`, `Fade`, `Reset`, and `None`.
+
+**Here they are, in order.**
+
+![Unfocused Modes](images/unfocused.png)
+
+Currently, the only way to set one of these is to change the `unfocused_mode` constant in `background.js` and package the theme yourself.
