@@ -24,13 +24,21 @@
         <tr>
           <td>
             <label for="checkbox-adaptive">Enable adaptive</label>
-            <span class="checkbox"></span>
           </td>
           <td>
             <input type="checkbox" id="checkbox-adaptive" name="adaptive">
             <span class="checkbox"></span>
           </td>
-          <td></td>
+          <td class="faded">Use the operating system's accent colors (on Windows only, in Personalization Settings).</td>
+        </tr>
+        <tr>
+          <td>
+            <label for="accent-color">Static color</label>
+          </td>
+          <td>
+            <input type="text" id="accent-color" name="accentColor" value="#394145">
+          </td>
+          <td class="faded">Color to use if adaptive mode is disabled, or unsupported by your OS.</td>
         </tr>
         <tr>
           <td>
@@ -46,7 +54,7 @@
               <option value="none">Dimmed text</option>
             </select>
           </td>
-          <td></td>
+          <td class="faded">Color scheme of unfocused windows, when you're clicked away from Firefox.</td>
         </tr>
       </tbody>
     </table>

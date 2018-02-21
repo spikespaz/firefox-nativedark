@@ -35,3 +35,7 @@ input[type="checkbox"]+span.checkbox:after {
 input[type="checkbox"]:checked+span.checkbox:after {
   content: "Yes";
 }
+
+.faded {
+  opacity: 0.7;
+}
