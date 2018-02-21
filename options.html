@@ -21,16 +21,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>
-            <label for="checkbox-adaptive">Enable adaptive</label>
-          </td>
-          <td>
-            <input type="checkbox" id="checkbox-adaptive" name="adaptive">
-            <span class="checkbox"></span>
-          </td>
-          <td class="faded">Use the operating system's accent colors (on Windows only, in Personalization Settings).</td>
-        </tr>
+        <!-- #accent-color -->
         <tr>
           <td>
             <label for="accent-color">Static color</label>
@@ -38,14 +29,28 @@
           <td>
             <input type="text" id="accent-color" name="accentColor" value="#394145">
           </td>
-          <td class="faded">Color to use if adaptive mode is disabled, or unsupported by your OS.</td>
+          <td class="faded">CSS color to use if adaptive mode is disabled, or unsupported by your OS.</td>
         </tr>
+        <!-- #accent-color -->
+        <!-- #enable-adaptive -->
         <tr>
           <td>
-            <label for="select-unfocused-theme">Unfocused theme</label>
+            <label for="enable-adaptive">Enable adaptive</label>
           </td>
           <td>
-            <select id="select-unfocused-theme" name="unfocusedTheme">
+            <input type="checkbox" id="enable-adaptive" name="accentColor" value="-moz-win-accentcolor">
+            <span class="checkbox"></span>
+          </td>
+          <td class="faded">Use the operating system's accent colors (on Windows only, in Personalization Settings).</td>
+        </tr>
+        <!-- #enable-adaptive -->
+        <!-- #unfocused-theme -->
+        <tr>
+          <td>
+            <label for="unfocused-theme">Unfocused theme</label>
+          </td>
+          <td>
+            <select id="unfocused-theme" name="unfocusedTheme">
               <option value="tabs">Light toolbar</option>
               <option value="title">Light titlebar</option>
               <option value="both">Light toolbar and titlebar</option>
@@ -56,6 +61,7 @@
           </td>
           <td class="faded">Color scheme of unfocused windows, when you're clicked away from Firefox.</td>
         </tr>
+        <!-- #unfocused-theme -->
       </tbody>
     </table>
     </div>
