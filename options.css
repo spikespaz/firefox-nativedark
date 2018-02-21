@@ -1,0 +1,37 @@
+h1 {
+  font-weight: 500;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+th {
+  text-align: left;
+}
+
+td {
+  white-space: nowrap;
+  border-top: 1px solid #dadada;
+}
+
+th,
+td {
+  padding: 6px 18px 6px 6px;
+}
+
+th:last-of-type,
+td:last-of-type {
+  width: 100%;
+  padding-right: 6px;
+}
+
+input[type="checkbox"]+span.checkbox:after {
+  content: "No";
+}
+
+input[type="checkbox"]:checked+span.checkbox:after {
+  content: "Yes";
+}
