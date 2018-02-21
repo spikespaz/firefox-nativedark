@@ -10,3 +10,5 @@ optionsForm.addEventListener("change", () => {
 
     browser.storage.local.set(formJSON);
 });
+
+console.log("Calling from options.js, loaded!");
