@@ -1,21 +1,25 @@
 {
-  "manifest_version": 2,
-  "name": "Native Dark",
-  "version": "1.2",
-  "author": "spikespaz (Jacob Birkett)",
-  "description": "Dynamic theme for Firefox Quantum that colorizes the title bar, tabs, and URL bar based on your Windows accent color.",
-  "homepage_url": "https://github.com/spikespaz/Firefox-NativeDark",
-  "background": {
-    "scripts": [
-      "background.js"
-    ]
-  },
-  "permissions": [
-    "theme"
-  ],
-  "applications": {
-    "gecko": {
-      "strict_min_version": "57.0"
+    "manifest_version": 2,
+    "name": "Native Dark",
+    "version": "1.3",
+    "author": "spikespaz (Jacob Birkett)",
+    "description": "Dynamic theme for Firefox Quantum that colorizes the title bar, tabs, and URL bar based on your Windows accent color.",
+    "homepage_url": "https://github.com/spikespaz/Firefox-NativeDark",
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "options_ui": {
+        "page": "options.html"
+    },
+    "permissions": [
+        "theme",
+        "storage"
+    ],
+    "applications": {
+        "gecko": {
+            "strict_min_version": "57.0"
+        }
     }
-  }
 }
