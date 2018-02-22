@@ -11,7 +11,6 @@ function updateWindow(window, colors) {
 function themeWindow(window) {
     browser.storage.local.get().then(themeOptions => {
         if (!window.focused) {
-            console.log(themeOptions);
             switch (themeOptions.unfocusedTheme) {
             case "tabs":
                 updateWindow(window, { // Make tabs white but keep accent background
@@ -91,6 +90,21 @@ function applyTheme() { // Theme all currently opened windows
 
 // Check if the platform is Windows, and if it can use the accent colors
 function initTheme() {
+    browser.storage.local.get([ // Get the keys that the theme uses
+        "accentColor",
+        "unfocusedTheme"
+    ]).then(themeOptions => {
+        if (Object.keys(themeOptions).length < 2) // Less values than required
+            browser.runtime.getPlatformInfo().then(platformInfo => {
+                console.log("Inside platform info retrieval");
+
+                browser.storage.local.set({ // Set the information to storage
+                    accentColor: platformInfo.os === "win" ? "-moz-win-accentcolor" : "#505050",
+                    unfocusedTheme: "fade"
+                });
+            });
+    });
+
     // Add a listener to update the theme on newly created windows
     browser.windows.onCreated.addListener(themeWindow);
 
