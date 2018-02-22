@@ -1,7 +1,7 @@
 # Firefox-NativeDark
 **Dynamic theme for Firefox Quantum that colorizes the title bar, tabs, and URL bar based on your Windows accent color.**
 
-[![Add to Firefox](images/button.png)](https://addons.mozilla.org/firefox/downloads/file/868099/native_dark-1.2-an+fx.xpi?src=dp-btn-primary)
+[![Add to Firefox](images/button.png)](https://addons.mozilla.org/firefox/downloads/file/871960/native_dark-1.3-an+fx.xpi?src=dp-btn-primary)
 
 Get it at Add-ons for Firefox: https://addons.mozilla.org/en-US/firefox/addon/native-dark/
 
@@ -21,12 +21,23 @@ Make sure that you have a good accent color selected from the palette in `Window
 
 ![Settings Screenshot](images/settings.png)
 
-## Issues
-This is really only meant to work in Windows 10. On other systems, it just defaults to the dark theme shown in the top example. **Please don't ask me why it doesn't sync with your theme in Linux!**
+## Unfocused
+By request of two users (and probably unspoken by several others), I have added more modes for unfocused Windows.
+Among these are `Tabs`, `Title`, `Both`, `Fade`, `Reset`, and `None`.
 
-Please submit issues or suggestions to the [Issues page on the GitHub repository](https://github.com/spikespaz/Firefox-NativeDark/issues).
+**Here they are, in order.**
 
-# Optional
+![Unfocused Modes](images/unfocused.png)
+
+To customize the unfocused theme and other settings, go to the addons options page.
+
+1. Go to `about:addons` in the URL bar.
+2. Find the `Native Dark` extension in the list, and click `Options` on the right.
+3. Change things.
+4. ???
+5. Profit!
+
+## Optional
 When the background for the title bar is set, the pretty blue line above active tabs is lost. Unfortunately, I have yet to find a way to fix this within the theme itself. The one way to fix it us by adding a custom `userChrome.css` to your profile directory.
 
 This is what it changes, top is before, bottom is after.
@@ -62,12 +73,7 @@ There's a great resource for references on what can be put into `userChrome.css`
 
 For more information about what `userChrome.css` is, see the [website for it](https://www.userchrome.org/).
 
-# Unfocused
-By request of two users (and probably unspoken by several others), I have added more modes for unfocused Windows.
-Among these are `Tabs`, `Title`, `Both`, `Fade`, `Reset`, and `None`.
+## Issues
+This is really only meant to work in Windows 10. On other systems, it just defaults to the dark theme shown in the top example. **Please don't ask me why it doesn't sync with your theme in Linux!**
 
-**Here they are, in order.**
-
-![Unfocused Modes](images/unfocused.png)
-
-Currently, the only way to set one of these is to change the `unfocused_mode` constant in `background.js` and package the theme yourself.
+Please submit issues or suggestions to the [Issues page on the GitHub repository](https://github.com/spikespaz/Firefox-NativeDark/issues).
