@@ -27,9 +27,10 @@
             <label for="accent-color">Static color</label>
           </td>
           <td>
-            <input type="text" id="accent-color" name="accentColor" value="#394145">
+            <input type="text" id="accent-color-text" value="#505050" maxlength="7">
+            <input type="color" id="accent-color" name="accentColor" value="#505050">
           </td>
-          <td class="faded">CSS color to use if adaptive mode is disabled, or unsupported by your OS.</td>
+          <td class="faded">Color to use if adaptive mode is disabled, or unsupported by your OS.</td>
         </tr>
         <!-- #accent-color -->
         <!-- #enable-adaptive -->
@@ -66,6 +67,7 @@
     </table>
     </div>
     <br>
+    <input id="options-sumbit" type="submit">
   </form>
 
   <script src="options.js"></script>
