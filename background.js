@@ -1,3 +1,16 @@
+function percentToBand(number) {
+    return number / 100 * 255;
+}
+
+function numberToHex(number) {
+    let hex = Math.floor(number).toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+}
+
+function percentToHex(number) {
+    return numberToHex(percentToBand(number));
+}
+
 function updateWindow(window, colors) {
     console.log("Calling from background.js, updating a window!");
     browser.theme.update(window.id, {
@@ -10,6 +23,8 @@ function updateWindow(window, colors) {
 
 function themeWindow(window) {
     browser.storage.local.get().then(themeOptions => {
+        console.log(themeOptions.toolbarOpacity);
+        console.log(percentToHex(themeOptions.toolbarOpacity));
         if (!window.focused) {
             switch (themeOptions.unfocusedTheme) {
             case "tabs":
@@ -28,7 +43,7 @@ function themeWindow(window) {
                     textcolor: "#000",
                     toolbar: themeOptions.accentColor,
                     toolbar_text: "#fff",
-                    toolbar_field: "#00000040", // 25% darker than accent
+                    toolbar_field: "#000000" + percentToHex(themeOptions.omnibarOpacity),
                     toolbar_field_text: "#fff"
                 });
                 break;
@@ -46,9 +61,9 @@ function themeWindow(window) {
                 updateWindow(window, {
                     accentcolor: themeOptions.accentColor,
                     textcolor: "#fff",
-                    toolbar: "#ffffff40", // 25% lighter than accent
+                    toolbar: "#ffffff" + percentToHex(themeOptions.toolbarOpacity),
                     toolbar_text: "#fff",
-                    toolbar_field: "#ffffff40", // 50% lighter than accent
+                    toolbar_field: "#ffffff" + percentToHex(themeOptions.omnibarOpacity),
                     toolbar_field_text: "#fff"
                 });
                 break;
@@ -75,9 +90,9 @@ function themeWindow(window) {
             updateWindow(window, {
                 accentcolor: themeOptions.accentColor,
                 textcolor: "#fff",
-                toolbar: "#00000040", // 25% darker than accent
+                toolbar: "#000000" + percentToHex(themeOptions.toolbarOpacity),
                 toolbar_text: "#fff",
-                toolbar_field: "#00000040", // 50% darker than accent
+                toolbar_field: "#000000" + percentToHex(themeOptions.omnibarOpacity),
                 toolbar_field_text: "#fff"
             });
         }

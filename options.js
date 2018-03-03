@@ -60,5 +60,11 @@ browser.storage.local.get().then(optionsData => {
         accentColorText.value = optionsData.accentColor.toUpperCase();
     }
 
+    toolbarOpacity.value = optionsData.unfocusedTheme;
+    toolbarOpacityNumber.value = optionsData.unfocusedTheme;
+    
+    omnibarOpacity.value = optionsData.unfocusedTheme;
+    omnibarOpacityNumber.value = optionsData.unfocusedTheme;
+
     document.getElementById("unfocused-theme").value = optionsData.unfocusedTheme;
 });
