@@ -14,7 +14,6 @@ const enableAdaptive = document.getElementById("enable-adaptive");
 
 // Update the values in the local storage when the form is submitted (rebound to change event)
 optionsForm.addEventListener("submit", event => {
-    console.log("Triggered submit");
     let formData = new FormData(optionsForm);
     let formJSON = {};
 
@@ -23,7 +22,6 @@ optionsForm.addEventListener("submit", event => {
     }
 
     browser.storage.local.set(formJSON);
-    console.log(formJSON);
     event.preventDefault();
 });
 
@@ -45,8 +43,6 @@ enableAdaptive.addEventListener("change", () => {
     accentColor.disabled = enableAdaptive.checked;
     accentColorText.disabled = enableAdaptive.checked;
 });
-
-console.log("Calling from options.js, loaded!");
 
 // Set the field values from local storage when the page is loaded
 browser.storage.local.get().then(optionsData => {

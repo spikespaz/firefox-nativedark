@@ -3,7 +3,7 @@ function percentToBand(number) {
 }
 
 function numberToHex(number) {
-    let hex = Math.floor(number).toString(16);
+    let hex = Math.trunc(number).toString(16);
     return hex.length == 1 ? "0" + hex : hex;
 }
 
@@ -12,7 +12,6 @@ function percentToHex(number) {
 }
 
 function updateWindow(window, colors) {
-    console.log("Calling from background.js, updating a window!");
     browser.theme.update(window.id, {
         images: {
             headerURL: ""
@@ -23,8 +22,6 @@ function updateWindow(window, colors) {
 
 function themeWindow(window) {
     browser.storage.local.get().then(themeOptions => {
-        console.log(themeOptions.toolbarOpacity);
-        console.log(percentToHex(themeOptions.toolbarOpacity));
         if (!window.focused) {
             switch (themeOptions.unfocusedTheme) {
             case "tabs":
@@ -113,8 +110,6 @@ function initTheme() {
     ]).then(themeOptions => {
         if (Object.keys(themeOptions).length < 2) // Less values than required
             browser.runtime.getPlatformInfo().then(platformInfo => {
-                console.log("Inside platform info retrieval");
-
                 browser.storage.local.set({ // Set the information to storage
                     accentColor: platformInfo.os === "win" ? "-moz-win-accentcolor" : "#505050",
                     unfocusedTheme: "fade",
@@ -139,4 +134,3 @@ function initTheme() {
 
 // Call init on load
 initTheme();
-console.log("Calling from background.js, loaded!");
