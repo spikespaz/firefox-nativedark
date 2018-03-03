@@ -4,6 +4,12 @@ const optionsSubmit = document.getElementById("options-sumbit");
 const accentColor = document.getElementById("accent-color");
 const accentColorText = document.getElementById("accent-color-text");
 
+const toolbarOpacity = document.getElementById("toolbar-opacity");
+const toolbarOpacityNumber = document.getElementById("toolbar-opacity-number");
+
+const omnibarOpacity = document.getElementById("omnibar-opacity");
+const omnibarOpacityNumber = document.getElementById("omnibar-opacity-number");
+
 const enableAdaptive = document.getElementById("enable-adaptive");
 
 // Update the values in the local storage when the form is submitted (rebound to change event)
@@ -24,8 +30,15 @@ optionsForm.addEventListener("submit", event => {
 // Bind all changes made to the form to automatically submit, uses fake button
 optionsForm.addEventListener("input", () => optionsSubmit.click());
 
+// Bind values with multiple inputs to update each other
 accentColor.addEventListener("input", () => accentColorText.value = accentColor.value.toUpperCase());
 accentColorText.addEventListener("input", () => accentColor.value = accentColorText.value);
+
+toolbarOpacity.addEventListener("input", () => toolbarOpacityNumber.value = toolbarOpacity.value);
+toolbarOpacityNumber.addEventListener("input", () => toolbarOpacity.value = toolbarOpacityNumber.value);
+
+omnibarOpacity.addEventListener("input", () => omnibarOpacityNumber.value = omnibarOpacity.value);
+omnibarOpacityNumber.addEventListener("input", () => omnibarOpacity.value = omnibarOpacityNumber.value);
 
 // Toggle disabled for color poicker when enable adaptive is changed
 enableAdaptive.addEventListener("change", () => {
