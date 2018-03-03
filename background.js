@@ -40,7 +40,7 @@ function themeWindow(window) {
                     textcolor: "#000",
                     toolbar: themeOptions.accentColor,
                     toolbar_text: "#fff",
-                    toolbar_field: "#000000" + percentToHex(themeOptions.omnibarOpacity),
+                    toolbar_field: "#000000" + percentToHex(themeOptions.omnibarOpacity - themeOptions.toolbarOpacity),
                     toolbar_field_text: "#fff"
                 });
                 break;
@@ -60,7 +60,7 @@ function themeWindow(window) {
                     textcolor: "#fff",
                     toolbar: "#ffffff" + percentToHex(themeOptions.toolbarOpacity),
                     toolbar_text: "#fff",
-                    toolbar_field: "#ffffff" + percentToHex(themeOptions.omnibarOpacity),
+                    toolbar_field: "#ffffff" + percentToHex(themeOptions.omnibarOpacity - themeOptions.toolbarOpacity),
                     toolbar_field_text: "#fff"
                 });
                 break;
@@ -89,7 +89,7 @@ function themeWindow(window) {
                 textcolor: "#fff",
                 toolbar: "#000000" + percentToHex(themeOptions.toolbarOpacity),
                 toolbar_text: "#fff",
-                toolbar_field: "#000000" + percentToHex(themeOptions.omnibarOpacity),
+                toolbar_field: "#000000" + percentToHex(themeOptions.omnibarOpacity - themeOptions.toolbarOpacity),
                 toolbar_field_text: "#fff"
             });
         }
