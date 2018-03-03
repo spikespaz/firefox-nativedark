@@ -107,7 +107,9 @@ function applyTheme() { // Theme all currently opened windows
 function initTheme() {
     browser.storage.local.get([ // Get the keys that the theme uses
         "accentColor",
-        "unfocusedTheme"
+        "unfocusedTheme",
+        "toolbarOpacity",
+        "omnibarOpacity"
     ]).then(themeOptions => {
         if (Object.keys(themeOptions).length < 2) // Less values than required
             browser.runtime.getPlatformInfo().then(platformInfo => {
@@ -115,7 +117,9 @@ function initTheme() {
 
                 browser.storage.local.set({ // Set the information to storage
                     accentColor: platformInfo.os === "win" ? "-moz-win-accentcolor" : "#505050",
-                    unfocusedTheme: "fade"
+                    unfocusedTheme: "fade",
+                    toolbarOpacity: 25,
+                    omnibarOpacity: 25
                 });
             });
     });
