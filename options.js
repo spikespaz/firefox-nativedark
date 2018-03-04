@@ -45,22 +45,22 @@ enableAdaptive.addEventListener("change", () => {
 });
 
 // Set the field values from local storage when the page is loaded
-browser.storage.local.get().then(optionsData => {
-    if (optionsData.accentColor === "-moz-win-accentcolor") {
+browser.storage.local.get().then(themeOptions => {
+    if (themeOptions.accentColor === "-moz-win-accentcolor") {
         document.getElementById("enable-adaptive").checked = true;
 
         accentColor.disabled = true;
         accentColorText.disabled = true;
     } else {
-        accentColor.value = optionsData.accentColor;
-        accentColorText.value = optionsData.accentColor.toUpperCase();
+        accentColor.value = themeOptions.accentColor;
+        accentColorText.value = themeOptions.accentColor.toUpperCase();
     }
 
-    toolbarOpacity.value = optionsData.toolbarOpacity;
-    toolbarOpacityNumber.value = optionsData.toolbarOpacity;
+    toolbarOpacity.value = themeOptions.toolbarOpacity;
+    toolbarOpacityNumber.value = themeOptions.toolbarOpacity;
 
-    omnibarOpacity.value = optionsData.omnibarOpacity;
-    omnibarOpacityNumber.value = optionsData.omnibarOpacity;
+    omnibarOpacity.value = themeOptions.omnibarOpacity;
+    omnibarOpacityNumber.value = themeOptions.omnibarOpacity;
 
-    document.getElementById("unfocused-theme").value = optionsData.unfocusedTheme;
+    document.getElementById("unfocused-theme").value = themeOptions.unfocusedTheme;
 });
