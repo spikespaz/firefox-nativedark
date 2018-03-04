@@ -108,15 +108,17 @@ function initTheme() {
         "toolbarOpacity",
         "omnibarOpacity"
     ]).then(themeOptions => {
-        if (Object.keys(themeOptions).length < 2) // Less values than required
-            browser.runtime.getPlatformInfo().then(platformInfo => {
-                browser.storage.local.set({ // Set the information to storage
-                    accentColor: platformInfo.os === "win" ? "-moz-win-accentcolor" : "#505050",
-                    unfocusedTheme: "fade",
-                    toolbarOpacity: 25,
-                    omnibarOpacity: 25
-                });
-            });
+        if (typeof themeOptions.accentColor === "undefined") browser.runtime.getPlatformInfo().then(platformInfo => {
+            themeOptions.accentColor = platformInfo.os === "win" ? "-moz-win-accentcolor" : "#505050";
+        });
+        if (typeof themeOptions.unfocusedTheme === "undefined")
+            themeOptions.unfocusedTheme = "fade";
+        if (typeof themeOptions.toolbarOpacity === "undefined")
+            themeOptions.toolbarOpacity = 25;
+        if (typeof themeOptions.omnibarOpacity === "undefined")
+            themeOptions.omnibarOpacity = 25;
+
+        browser.storage.local.set(themeOptions);
     });
 
     // Add a listener to update the theme on newly created windows
