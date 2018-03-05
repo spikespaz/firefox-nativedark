@@ -1,7 +1,7 @@
 # Firefox-NativeDark
 **Native Dark** is a theme for Firefox Quantum that aims to add support for the Windows 10 Accent Color, set in Personalization Settings. Support is also added for other systems, and the colors can be customized in the options page. On other systems besides Windows, functionality is limited to a solid, non-adapting color that is not guaranteed to match your system colors. The original intent was to mainly replace the default themes of Firefox, because the light theme was adaptive in the titlebar and not the tabs. It allows for the same adaptive titlebar as the default light theme, but combines the aesthetic of the dark theme's tabs.
 
-[![Add to Firefox](images/button.png)](https://addons.mozilla.org/firefox/downloads/file/880915/native_dark-1.4-an+fx.xpi?src=dp-btn-primary)
+[![Add to Firefox](images/button.png)](https://addons.mozilla.org/firefox/downloads/file/882571/native_dark-1.5-an+fx.xpi?src=dp-btn-primary)
 
 Get it at Add-ons for Firefox: https://addons.mozilla.org/en-US/firefox/addon/native-dark/
 
