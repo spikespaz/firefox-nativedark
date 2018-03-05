@@ -131,7 +131,7 @@ function applyTheme() { // Theme all currently opened windows
 
 // Check if the platform is Windows, and if it can use the accent colors
 function initTheme() {
-    browser.storage.local.clear(); // DEBUG
+    // browser.storage.local.clear(); // DEBUG
     let pendingPromise = { then: callback => { callback(); } }; // Create a fake Promise that allows .then()
 
     browser.storage.local.get().then(themeOptions => {
