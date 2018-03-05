@@ -97,26 +97,26 @@ function themeWindow(window) {
         } else { // Not incognito, use adaptive theme
             let toolbarMask = "#000000" + percentToHex(themeOptions.toolbarOpacity);
             let omnibarMask = "#000000" + percentToHex(themeOptions.omnibarOpacity - themeOptions.toolbarOpacity);
-            let highlightColor = themeOptions.highlightBorders ? themeOptions.highlightColor : undefined;
+            let borderColor = themeOptions.highlightBorders ? themeOptions.highlightColor : undefined;
 
             updateWindow(window, {
                 accentcolor: themeOptions.accentColor,
                 // icons: "#fff", // Disabled, not needed
                 icons_attention: themeOptions.highlightColor,
                 popup: themeOptions.accentColor,
-                popup_border: highlightColor,
+                popup_border: borderColor,
                 popup_text: "#fff",
                 tab_line: themeOptions.highlightColor,
-                tab_loading: highlightColor,
+                tab_loading: themeOptions.highlightColor,
                 // tab_selected, // Difference with tab_line?
                 // tab_text: "#000",
                 textcolor: "#fff",
                 toolbar: toolbarMask,
-                toolbar_bottom_separator: themeOptions.bottomSeparator ? highlightColor : undefined, // Requested by a user
+                toolbar_bottom_separator: themeOptions.bottomSeparator ? themeOptions.highlightColor : undefined,
                 toolbar_field: omnibarMask,
-                toolbar_field_border: highlightColor,
+                toolbar_field_border: borderColor,
                 toolbar_field_text: "#fff",
-                toolbar_field_separator: highlightColor,
+                toolbar_field_separator: borderColor,
                 toolbar_text: "#fff",
                 // toolbar_top_separator: highlightColor, // Ugly
                 // toolbar_vertical_separator: highlightColor // Also ugly
@@ -131,7 +131,7 @@ function applyTheme() { // Theme all currently opened windows
 
 // Check if the platform is Windows, and if it can use the accent colors
 function initTheme() {
-    // browser.storage.local.clear(); // DEBUG
+    browser.storage.local.clear(); // DEBUG
     let pendingPromise = { then: callback => { callback(); } }; // Create a fake Promise that allows .then()
 
     browser.storage.local.get().then(themeOptions => {
@@ -145,7 +145,7 @@ function initTheme() {
         // Default highlight color
         if (typeof themeOptions.highlightColor === "undefined") themeOptions.highlightColor = "#0078D7";
 
-        if (typeof themeOptions.highlightBorders === "undefined") themeOptions.highlightBorders = true;
+        if (typeof themeOptions.highlightBorders === "undefined") themeOptions.highlightBorders = false;
 
         if (typeof themeOptions.bottomSeparator === "undefined") themeOptions.bottomSeparator = false;
 

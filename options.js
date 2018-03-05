@@ -10,6 +10,11 @@ const toolbarOpacityNumber = document.getElementById("toolbar-opacity-number");
 const omnibarOpacity = document.getElementById("omnibar-opacity");
 const omnibarOpacityNumber = document.getElementById("omnibar-opacity-number");
 
+const highlightColor = document.getElementById("highlight-color");
+const highlightColorText = document.getElementById("highlight-color-text");
+
+const highlightBorders = document.getElementById("highlight-borders");
+
 const enableAdaptive = document.getElementById("enable-adaptive");
 
 // Update the values in the local storage when the form is submitted (rebound to change event)
@@ -23,6 +28,8 @@ optionsForm.addEventListener("submit", event => {
 
     browser.storage.local.set(formJSON);
     event.preventDefault();
+
+    console.log(formJSON);
 });
 
 // Bind all changes made to the form to automatically submit, uses fake button
@@ -37,6 +44,9 @@ toolbarOpacityNumber.addEventListener("input", () => toolbarOpacity.value = tool
 
 omnibarOpacity.addEventListener("input", () => omnibarOpacityNumber.value = omnibarOpacity.value);
 omnibarOpacityNumber.addEventListener("input", () => omnibarOpacity.value = omnibarOpacityNumber.value);
+
+highlightColor.addEventListener("input", () => highlightColorText.value = highlightColor.value.toUpperCase());
+highlightColorText.addEventListener("input", () => highlightColor.value = highlightColorText.value);
 
 // Toggle disabled for color poicker when enable adaptive is changed
 enableAdaptive.addEventListener("change", () => {
@@ -61,6 +71,11 @@ browser.storage.local.get().then(themeOptions => {
 
     omnibarOpacity.value = themeOptions.omnibarOpacity;
     omnibarOpacityNumber.value = themeOptions.omnibarOpacity;
+
+    highlightColor.value = themeOptions.highlightColor;
+    highlightColorText.value = themeOptions.highlightColor;
+
+    highlightBorders.value = themeOptions.highlightBorders;
 
     document.getElementById("unfocused-theme").value = themeOptions.unfocusedTheme;
 });

@@ -27,7 +27,7 @@
             <label for="accent-color">Static color</label>
           </td>
           <td>
-            <input type="text" id="accent-color-text" value="#505050" maxlength="7">
+            <input type="text" id="accent-color-text" class="hex-color-text" value="#505050" maxlength="7">
             <input type="color" id="accent-color" name="accentColor" value="#505050">
           </td>
           <td class="faded">Color to use if adaptive mode is disabled, or unsupported by your OS.</td>
@@ -69,6 +69,30 @@
           <td class="faded">The percent to darken the accent color by for the address bar.</td>
         </tr>
         <!-- #omnibar-opacity -->
+        <!-- #highlight-color -->
+        <tr>
+          <td>
+            <label for="highlight-color">Highlight Color</label>
+          </td>
+          <td>
+            <input type="text" id="highlight-color-text" class="hex-color-text" value="#505050" maxlength="7">
+            <input type="color" id="highlight-color" name="highlightColor" value="#505050">
+          </td>
+          <td class="faded">Color of the highlights, or accent color used for borders, etc.</td>
+        </tr>
+        <!-- #highlight-color -->
+        <!-- #highlight-borders -->
+        <tr>
+          <td>
+            <label for="highlight-borders">Highlight Borders</label>
+          </td>
+          <td>
+            <input type="checkbox" id="highlight-borders" name="highlightBorders">
+            <span class="checkbox"></span>
+          </td>
+          <td class="faded">Use the highlight color to border the popups and omnibar.</td>
+        </tr>
+        <!-- #highlight-borders -->
         <!-- #unfocused-theme -->
         <tr>
           <td>

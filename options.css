@@ -45,7 +45,7 @@ input[type="color"] {
   opacity: 0.7;
 }
 
-#accent-color-text {
+.hex-color-text {
   width: 8.5ch;
 }
 
