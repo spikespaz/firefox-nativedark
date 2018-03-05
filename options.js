@@ -14,6 +14,7 @@ const highlightColor = document.getElementById("highlight-color");
 const highlightColorText = document.getElementById("highlight-color-text");
 
 const highlightBorders = document.getElementById("highlight-borders");
+const bottomSeparator = document.getElementById("bottom-separator");
 
 const enableAdaptive = document.getElementById("enable-adaptive");
 
@@ -28,10 +29,10 @@ optionsForm.addEventListener("submit", event => {
 
     if (typeof formJSON.highlightBorders === "undefined") formJSON.highlightBorders = false;
 
+    if (typeof formJSON.bottomSeparator === "undefined") formJSON.bottomSeparator = false;
+
     browser.storage.local.set(formJSON);
     event.preventDefault();
-
-    console.log(formJSON);
 });
 
 // Bind all changes made to the form to automatically submit, uses fake button
@@ -78,6 +79,7 @@ browser.storage.local.get().then(themeOptions => {
     highlightColorText.value = themeOptions.highlightColor;
 
     highlightBorders.checked = themeOptions.highlightBorders;
+    bottomSeparator.checked = themeOptions.bottomSeparator;
 
     document.getElementById("unfocused-theme").value = themeOptions.unfocusedTheme;
 });
