@@ -14,9 +14,7 @@ function percentToHex(number) {
 
 function updateWindow(window, colors) {
     browser.theme.update(window.id, {
-        images: {
-            headerURL: ""
-        },
+        images: { headerURL: "" },
         colors: colors
     });
 }
@@ -24,6 +22,8 @@ function updateWindow(window, colors) {
 function themeWindow(window) {
     browser.storage.local.get().then(themeOptions => {
         if (!window.focused) {
+            let highlightFaded = themeOptions.highlightColor + percentToHex(100 - themeOptions.toolbarOpacity);
+
             switch (themeOptions.unfocusedTheme) {
             case "tabs":
                 updateWindow(window, { // Make tabs white but keep accent background
@@ -32,7 +32,9 @@ function themeWindow(window) {
                     toolbar: "#fff",
                     toolbar_text: "#000",
                     toolbar_field: "#F9F9FA", // Same color from the default light theme
-                    toolbar_field_text: "#000"
+                    toolbar_field_text: "#000",
+                    tab_line: highlightFaded,
+                    icons_attention: highlightFaded,
                 });
                 break;
             case "title":
@@ -42,7 +44,9 @@ function themeWindow(window) {
                     toolbar: themeOptions.accentColor,
                     toolbar_text: "#fff",
                     toolbar_field: "#000000" + percentToHex(themeOptions.omnibarOpacity - themeOptions.toolbarOpacity),
-                    toolbar_field_text: "#fff"
+                    toolbar_field_text: "#fff",
+                    tab_line: highlightFaded,
+                    icons_attention: highlightFaded,
                 });
                 break;
             case "both":
@@ -52,7 +56,9 @@ function themeWindow(window) {
                     toolbar: "#0000000f", // 10% darker than white
                     toolbar_text: "#000",
                     toolbar_field: "#0000000f", // 20% darker than white
-                    toolbar_field_text: "#000"
+                    toolbar_field_text: "#000",
+                    tab_line: highlightFaded,
+                    icons_attention: highlightFaded,
                 });
                 break;
             case "fade":
@@ -62,7 +68,9 @@ function themeWindow(window) {
                     toolbar: "#ffffff" + percentToHex(themeOptions.toolbarOpacity),
                     toolbar_text: "#fff",
                     toolbar_field: "#ffffff" + percentToHex(themeOptions.omnibarOpacity - themeOptions.toolbarOpacity),
-                    toolbar_field_text: "#fff"
+                    toolbar_field_text: "#fff",
+                    tab_line: highlightFaded,
+                    icons_attention: highlightFaded,
                 });
                 break;
             case "reset":
@@ -72,7 +80,9 @@ function themeWindow(window) {
                     toolbar: "#F9F9FA",
                     toolbar_text: "#000",
                     toolbar_field: "#fff",
-                    toolbar_field_text: "#000"
+                    toolbar_field_text: "#000",
+                    tab_line: highlightFaded,
+                    icons_attention: highlightFaded,
                 });
                 break; // Swallows "none"
             }
@@ -121,7 +131,6 @@ function applyTheme() { // Theme all currently opened windows
 
 // Check if the platform is Windows, and if it can use the accent colors
 function initTheme() {
-    browser.storage.local.clear(); // DEBUG
     // browser.storage.local.clear(); // DEBUG
     let pendingPromise = { then: callback => { callback(); } }; // Create a fake Promise that allows .then()
 
@@ -137,6 +146,8 @@ function initTheme() {
         if (typeof themeOptions.highlightColor === "undefined") themeOptions.highlightColor = "#0078D7";
 
         if (typeof themeOptions.highlightBorders === "undefined") themeOptions.highlightBorders = true;
+
+        if (typeof themeOptions.bottomSeparator === "undefined") themeOptions.bottomSeparator = false;
 
         if (typeof themeOptions.unfocusedTheme === "undefined") themeOptions.unfocusedTheme = "fade";
 
