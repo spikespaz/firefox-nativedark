@@ -90,7 +90,12 @@ function themeWindow(window) {
                 toolbar: "#000000" + percentToHex(themeOptions.toolbarOpacity),
                 toolbar_text: "#fff",
                 toolbar_field: "#000000" + percentToHex(themeOptions.omnibarOpacity - themeOptions.toolbarOpacity),
-                toolbar_field_text: "#fff"
+                toolbar_field_text: "#fff",
+                // toolbar_field_border: "#8000d7", // Firefox >= 60
+                popup: themeOptions.accentColor, // Firefox >= 60
+                popup_text: "#fff", // Firefox >= 60
+                // popup_border: "#8000d7", // Firefox >= 60
+                // icons_attention: "#ff0000" // Firefox >= 60
             });
         }
     });
