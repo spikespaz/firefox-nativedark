@@ -1,3 +1,4 @@
+// https://developer.mozilla.org/en-US/Add-ons/WebExtensions/manifest.json/theme
 function percentToBand(number) {
     return number / 100 * 255;
 }
@@ -86,16 +87,27 @@ function themeWindow(window) {
         } else { // Not incognito, use adaptive theme
             updateWindow(window, {
                 accentcolor: themeOptions.accentColor,
+                // button_background_active,
+                // button_background_hover,
+                // icons,
+                // icons_attention,
+                popup: themeOptions.accentColor,
+                // popup_border,
+                popup_text: "#fff",
+                // tab_line,
+                // tab_loading,
+                // tab_selected,
+                // tab_text,
                 textcolor: "#fff",
                 toolbar: "#000000" + percentToHex(themeOptions.toolbarOpacity),
-                toolbar_text: "#fff",
+                // toolbar_bottom_separator,
                 toolbar_field: "#000000" + percentToHex(themeOptions.omnibarOpacity - themeOptions.toolbarOpacity),
+                // toolbar_field_border,
                 toolbar_field_text: "#fff",
-                // toolbar_field_border: "#8000d7", // Firefox >= 60
-                popup: themeOptions.accentColor, // Firefox >= 60
-                popup_text: "#fff", // Firefox >= 60
-                // popup_border: "#8000d7", // Firefox >= 60
-                // icons_attention: "#ff0000" // Firefox >= 60
+                // toolbar_field_separator,
+                toolbar_text: "#fff",
+                // toolbar_top_separator,
+                // toolbar_vertical_separator
             });
         }
     });
