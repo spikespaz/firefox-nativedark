@@ -26,6 +26,8 @@ optionsForm.addEventListener("submit", event => {
         formJSON[field[0]] = field[1];
     }
 
+    if (typeof formJSON.highlightBorders === "undefined") formJSON.highlightBorders = false;
+
     browser.storage.local.set(formJSON);
     event.preventDefault();
 
@@ -75,7 +77,7 @@ browser.storage.local.get().then(themeOptions => {
     highlightColor.value = themeOptions.highlightColor;
     highlightColorText.value = themeOptions.highlightColor;
 
-    highlightBorders.value = themeOptions.highlightBorders;
+    highlightBorders.checked = themeOptions.highlightBorders;
 
     document.getElementById("unfocused-theme").value = themeOptions.unfocusedTheme;
 });
