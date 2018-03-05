@@ -102,36 +102,44 @@ function applyTheme() { // Theme all currently opened windows
 
 // Check if the platform is Windows, and if it can use the accent colors
 function initTheme() {
-    browser.storage.local.get([ // Get the keys that the theme uses
-        "accentColor",
-        "unfocusedTheme",
-        "toolbarOpacity",
-        "omnibarOpacity"
-    ]).then(themeOptions => {
-        if (typeof themeOptions.accentColor === "undefined") browser.runtime.getPlatformInfo().then(platformInfo => {
-            themeOptions.accentColor = platformInfo.os === "win" ? "-moz-win-accentcolor" : "#505050";
-        });
+    let pendingPromise = { then: callback => { callback(); } }; // Create a fake Promise that allows .then()
+
+    browser.storage.local.get().then(themeOptions => {
+        if (typeof themeOptions.accentColor === "undefined") {
+            if (typeof pendingPromise === "object") pendingPromise = browser.runtime.getPlatformInfo();
+
+            pendingPromise.then(platformInfo => {
+                themeOptions.accentColor = platformInfo.os === "win" ? "-moz-win-accentcolor" : "#505050";
+            });
+        }
+
         if (typeof themeOptions.unfocusedTheme === "undefined")
             themeOptions.unfocusedTheme = "fade";
+
         if (typeof themeOptions.toolbarOpacity === "undefined")
             themeOptions.toolbarOpacity = 25;
-        if (typeof themeOptions.omnibarOpacity === "undefined")
-            themeOptions.omnibarOpacity = 25;
 
-        browser.storage.local.set(themeOptions);
+        if (typeof themeOptions.omnibarOpacity === "undefined")
+            themeOptions.omnibarOpacity = 50;
+
+        if (pendingPromise)
+            pendingPromise.then(() => browser.storage.local.set(themeOptions));
+        else browser.storage.local.set(themeOptions);
     });
 
-    // Add a listener to update the theme on newly created windows
-    browser.windows.onCreated.addListener(themeWindow);
+    pendingPromise.then(() => {
+        // Add a listener to update the theme on newly created windows
+        browser.windows.onCreated.addListener(themeWindow);
 
-    // Add a listener for when the focus changes, update all the window themes
-    browser.windows.onFocusChanged.addListener(applyTheme);
+        // Add a listener for when the focus changes, update all the window themes
+        browser.windows.onFocusChanged.addListener(applyTheme);
 
-    // Update all browser window themes when the storage changes
-    browser.storage.onChanged.addListener(applyTheme);
+        // Update all browser window themes when the storage changes
+        browser.storage.onChanged.addListener(applyTheme);
 
-    // Apply the theme to all browser windows currently opened
-    applyTheme();
+        // Apply the theme to all browser windows currently opened
+        applyTheme();
+    });
 }
 
 // Call init on load
