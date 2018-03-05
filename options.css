@@ -49,6 +49,10 @@ input[type="color"] {
   width: 8.5ch;
 }
 
+.percent-number {
+  width: 6.5ch;
+}
+
 #options-sumbit {
   display: none;
 }
