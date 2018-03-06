@@ -21,6 +21,8 @@ const maskColorWhite = document.getElementById("mask-color-white");
 
 const enableAdaptive = document.getElementById("enable-adaptive");
 
+const resetAllButton = document.getElementById("options-reset");
+
 // Update the values in the local storage when the form is submitted (rebound to change event)
 optionsForm.addEventListener("submit", event => {
     let formData = new FormData(optionsForm);
@@ -88,4 +90,9 @@ browser.storage.local.get().then(themeOptions => {
     maskColorWhite.checked = themeOptions.maskColor === "#ffffff";
 
     document.getElementById("unfocused-theme").value = themeOptions.unfocusedTheme;
+});
+
+resetAllButton.addEventListener("click", () => {
+    browser.storage.local.clear();
+    browser.runtime.reload();
 });

@@ -27,8 +27,8 @@
             <label for="accent-color">Static Color</label>
           </td>
           <td>
-            <input type="text" id="accent-color-text" class="hex-color-text" maxlength="7">
-            <input type="color" id="accent-color" name="accentColor">
+            <input type="text" id="accent-color-text" class="hex-color-text" maxlength="7" value="#505050">
+            <input type="color" id="accent-color" name="accentColor" value="#505050">
           </td>
           <td class="faded">Color to use if adaptive mode is disabled, or unsupported by your OS.</td>
         </tr>
@@ -139,6 +139,7 @@
     </table>
     </div>
     <br>
+    <input id="options-reset" type="button" value="Reset all values and refresh">
     <input id="options-sumbit" type="submit">
   </form>
 
