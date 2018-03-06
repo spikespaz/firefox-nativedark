@@ -43,7 +43,7 @@ function themeWindow(window) {
                     textcolor: "#000",
                     toolbar: themeOptions.accentColor,
                     toolbar_text: "#fff",
-                    toolbar_field: "#000000" + percentToHex(themeOptions.omnibarOpacity - themeOptions.toolbarOpacity),
+                    toolbar_field: themeOptions.maskColor +  percentToHex(themeOptions.omnibarOpacity - themeOptions.toolbarOpacity),
                     toolbar_field_text: "#fff",
                     tab_line: highlightFaded,
                     icons_attention: highlightFaded,
@@ -53,9 +53,9 @@ function themeWindow(window) {
                 updateWindow(window, {
                     accentcolor: "#fff",
                     textcolor: "#000",
-                    toolbar: "#0000000f", // 10% darker than white
+                    toolbar: themeOptions.maskColor + "0f", // 10% darker than white
                     toolbar_text: "#000",
-                    toolbar_field: "#0000000f", // 20% darker than white
+                    toolbar_field: themeOptions.maskColor + "0f", // 20% darker than white
                     toolbar_field_text: "#000",
                     tab_line: highlightFaded,
                     icons_attention: highlightFaded,
@@ -95,8 +95,8 @@ function themeWindow(window) {
                 toolbar_text: "#fff"
             });
         } else { // Not incognito, use adaptive theme
-            let toolbarMask = "#000000" + percentToHex(themeOptions.toolbarOpacity);
-            let omnibarMask = "#000000" + percentToHex(themeOptions.omnibarOpacity - themeOptions.toolbarOpacity);
+            let toolbarMask = themeOptions.maskColor + percentToHex(themeOptions.toolbarOpacity);
+            let omnibarMask = themeOptions.maskColor + percentToHex(themeOptions.omnibarOpacity - themeOptions.toolbarOpacity);
             let borderColor = themeOptions.highlightBorders ? themeOptions.highlightColor : undefined;
 
             updateWindow(window, {
