@@ -16,6 +16,9 @@ const highlightColorText = document.getElementById("highlight-color-text");
 const highlightBorders = document.getElementById("highlight-borders");
 const bottomSeparator = document.getElementById("bottom-separator");
 
+const maskColorBlack = document.getElementById("mask-color-black");
+const maskColorWhite = document.getElementById("mask-color-white");
+
 const enableAdaptive = document.getElementById("enable-adaptive");
 
 // Update the values in the local storage when the form is submitted (rebound to change event)
@@ -80,6 +83,9 @@ browser.storage.local.get().then(themeOptions => {
 
     highlightBorders.checked = themeOptions.highlightBorders;
     bottomSeparator.checked = themeOptions.bottomSeparator;
+
+    maskColorBlack.checked = themeOptions.maskColor === "#000000";
+    maskColorWhite.checked = themeOptions.maskColor === "#ffffff";
 
     document.getElementById("unfocused-theme").value = themeOptions.unfocusedTheme;
 });

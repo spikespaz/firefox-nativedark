@@ -155,6 +155,8 @@ function initTheme() {
 
         if (typeof themeOptions.omnibarOpacity === "undefined") themeOptions.omnibarOpacity = 50;
 
+        if (typeof themeOptions.maskColor === "undefined") themeOptions.maskColor = "#000000";
+
         if (pendingPromise) pendingPromise.then(() => browser.storage.local.set(themeOptions));
         else browser.storage.local.set(themeOptions);
     });
