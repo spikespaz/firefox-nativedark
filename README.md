@@ -1,4 +1,11 @@
 # Firefox-NativeDark
+[![Version](https://img.shields.io/amo/v/native-dark.svg?style=for-the-badge&label=Version)
+![License](https://img.shields.io/github/license/spikespaz/firefox-nativedark.svg?style=for-the-badge)
+![Downloads](https://img.shields.io/amo/d/native-dark.svg?style=for-the-badge)
+![Users](https://img.shields.io/amo/users/native-dark.svg?style=for-the-badge)
+![Rating](https://img.shields.io/amo/rating/native-dark.svg?style=for-the-badge)](https://addons.mozilla.org/en-US/firefox/addon/native-dark/)
+[![Stars](https://img.shields.io/github/stars/spikespaz/firefox-nativedark.svg?style=for-the-badge)](https://github.com/spikespaz/firefox-nativedark)
+
 **Native Dark** is a theme for Firefox Quantum that aims to add support for the Windows 10 Accent Color, set in Personalization Settings. Support is also added for other systems, and the colors can be customized in the options page. On other systems besides Windows, functionality is limited to a solid, non-adapting color that is not guaranteed to match your system colors. The original intent was to mainly replace the default themes of Firefox, because the light theme was adaptive in the titlebar and not the tabs. It allows for the same adaptive titlebar as the default light theme, but combines the aesthetic of the dark theme's tabs.
 
 [![Add to Firefox](images/button.png)](https://addons.mozilla.org/firefox/downloads/file/882571/native_dark-1.5-an+fx.xpi?src=dp-btn-primary)
@@ -77,3 +84,5 @@ For more information about what `userChrome.css` is, see the [website for it](ht
 This is really only meant to work in Windows 10. On other systems, it just defaults to the dark theme shown in the top example. **Please don't ask me why it doesn't sync with your theme in Linux!**
 
 Please submit issues or suggestions to the [Issues page on the GitHub repository](https://github.com/spikespaz/Firefox-NativeDark/issues).
+
+[<sub>Shield badges provided by Shields.io.</sub>](https://shields.io)
