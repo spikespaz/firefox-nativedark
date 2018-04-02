@@ -45,7 +45,7 @@ To customize the unfocused theme and other settings, go to the addons options pa
 5. Profit!
 
 ## Optional
-When the background for the title bar is set, the pretty blue line above active tabs is lost. Unfortunately, I have yet to find a way to fix this within the theme itself. The one way to fix it us by adding a custom `userChrome.css` to your profile directory.
+When the background for the title bar is set, the pretty blue line above active tabs is lost. ~~Unfortunately, I have yet to find a way to fix this within the theme itself. The one way to fix it us by adding a custom `userChrome.css` to your profile directory.~~ **Update:** In Firefox version 60 and above, the ability to change the tab line color has been added to the theming API. If you have the latest version of Firefox, or the Nightly, this should be enabled. It can be customized in the theme options page. Check `about:support` under "Application Basics - Version" too see if you have it.
 
 This is what it changes, top is before, bottom is after.
 
