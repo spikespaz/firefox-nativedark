@@ -1,10 +1,10 @@
 # Firefox-NativeDark
-[![Version](https://img.shields.io/amo/v/native-dark.svg?style=for-the-badge&label=Version)
-![License](https://img.shields.io/github/license/spikespaz/firefox-nativedark.svg?style=for-the-badge)
-![Downloads](https://img.shields.io/amo/d/native-dark.svg?style=for-the-badge)
-![Users](https://img.shields.io/amo/users/native-dark.svg?style=for-the-badge)
-![Rating](https://img.shields.io/amo/rating/native-dark.svg?style=for-the-badge)](https://addons.mozilla.org/firefox/addon/native-dark/)
-[![Stars](https://img.shields.io/github/stars/spikespaz/firefox-nativedark.svg?style=for-the-badge)](https://github.com/spikespaz/firefox-nativedark)
+[![Version](https://img.shields.io/amo/v/native-dark.svg?style=for-the-badge&label=Version)](https://github.com/spikespaz/firefox-nativedark/releases/latest/)
+[![License](https://img.shields.io/github/license/spikespaz/firefox-nativedark.svg?style=for-the-badge)](https://github.com/spikespaz/firefox-nativedark/blob/master/LICENSE/)
+[![Downloads](https://img.shields.io/amo/d/native-dark.svg?style=for-the-badge)](https://addons.mozilla.org/firefox/addon/native-dark/versions/)
+[![Users](https://img.shields.io/amo/users/native-dark.svg?style=for-the-badge)](https://addons.mozilla.org/en-US/firefox/addon/native-dark/reviews/)
+[![Rating](https://img.shields.io/amo/rating/native-dark.svg?style=for-the-badge)](https://addons.mozilla.org/firefox/addon/native-dark/reviews/)
+[![Stars](https://img.shields.io/github/stars/spikespaz/firefox-nativedark.svg?style=for-the-badge)](https://github.com/spikespaz/firefox-nativedark/stargazers/)
 
 **Native Dark** is a theme for Firefox Quantum that aims to add support for the Windows 10 Accent Color, set in Personalization Settings. Support is also added for other systems, and the colors can be customized in the options page. On other systems besides Windows, functionality is limited to a solid, non-adapting color that is not guaranteed to match your system colors. The original intent was to mainly replace the default themes of Firefox, because the light theme was adaptive in the titlebar and not the tabs. It allows for the same adaptive titlebar as the default light theme, but combines the aesthetic of the dark theme's tabs.
 
