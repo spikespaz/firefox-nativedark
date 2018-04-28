@@ -1,6 +1,6 @@
 # Firefox-NativeDark
 
-**Rewrite coming!!!** Summer is coming up and I'm going to have time to do this rght.
+**Rewrite coming!!!** Summer is coming up and I'm going to have time to do this right.
 
 [![Version](https://img.shields.io/amo/v/native-dark.svg?style=for-the-badge&label=Version)](https://github.com/spikespaz/firefox-nativedark/releases/latest/)
 [![License](https://img.shields.io/github/license/spikespaz/firefox-nativedark.svg?style=for-the-badge)](https://github.com/spikespaz/firefox-nativedark/blob/master/LICENSE/)
