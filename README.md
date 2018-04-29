@@ -80,7 +80,8 @@ Alternatively, copy the code below and use it as a base for modifications in you
 For example, change `-moz-box-ordinal-group` to `2` to make the active indicator line appear on the bottom of the tab, or change the hex value `#0A84FF` for a different color.
 
 If you want the omnibar to use your highlight color when you're typing in it, use `userChrome.css`.
-```
+
+```css
 #urlbar[focused="true"] ::-moz-selection {
   background: #0A84FF !important; // Change the color to what you want
 }
