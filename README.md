@@ -73,11 +73,18 @@ Alternatively, copy the code below and use it as a base for modifications in you
 }
 
 .tab-line[selected=true] {
-    background-color: #0A84FF !important;
+    background-color: #0A84FF !important; // Change the color to what you want
 }
 ```
 
 For example, change `-moz-box-ordinal-group` to `2` to make the active indicator line appear on the bottom of the tab, or change the hex value `#0A84FF` for a different color.
+
+If you want the omnibar to use your highlight color when you're typing in it, use `userChrome.css`.
+```
+#urlbar[focused="true"] ::-moz-selection {
+  background: #0A84FF !important; // Change the color to what you want
+}
+```
 
 There's a great resource for references on what can be put into `userChrome.css` at the [UserChrome-Tweaks](https://github.com/Timvde/UserChrome-Tweaks) community repository, or the [FirefoxCSS Subreddit](https://www.reddit.com/r/FirefoxCSS/).
 
