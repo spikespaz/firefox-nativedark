@@ -1,5 +1,7 @@
 # Firefox-NativeDark
 
+**Yay! This extension won second place in the very first [Mozilla Firefox Extensions Challenge](https://extensionschallenge.com)!**
+
 **Rewrite coming!!!** Summer is coming up and I'm going to have time to do this right.
 
 [![Version](https://img.shields.io/amo/v/native-dark.svg?style=for-the-badge&label=Version)](https://github.com/spikespaz/firefox-nativedark/releases/latest/)
