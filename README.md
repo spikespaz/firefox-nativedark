@@ -1,4 +1,4 @@
-# Firefox-NativeDark
+# ![Firefox Native Dark](logo/banner.jpg)
 
 **Yay! This extension won second place in the very first [Mozilla Firefox Extensions Challenge](https://extensionschallenge.com)!**
 
