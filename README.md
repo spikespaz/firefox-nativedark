@@ -1,6 +1,6 @@
 # ![Firefox Native Dark](logo/banner.jpg)
 
-*Logo credit to [@baranpririncal](https://github.com/baranpirincal).*
+*Logo credit to [@baranpirincal](https://github.com/baranpirincal).*
 
 **Yay! This extension won second place in the very first [Mozilla Firefox Extensions Challenge](https://extensionschallenge.com)!**
 
