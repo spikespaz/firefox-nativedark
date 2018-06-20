@@ -101,3 +101,13 @@ This is really only meant to work in Windows 10. On other systems, it just defau
 Please submit issues or suggestions to the [Issues page on the GitHub repository](https://github.com/spikespaz/Firefox-NativeDark/issues).
 
 [<sub>Shield badges provided by Shields.io.</sub>](https://shields.io)
+
+## Donations
+
+If you would like to show appreciation for my work, I would gladly accept a small donation!
+
+I will accept donations through PayPal.Me, Buy Me a Coffee, or Patreon.
+
+[![Buy Me a Coffee](https://i.imgur.com/fN422E7.png)](https://buymeacoffee.com/spikespaz)
+[![PayPal.Me](https://i.imgur.com/JWkunGi.png)](https://paypal.me/spikespaz)
+[![Patreon](https://i.imgur.com/K05b2RO.png)](https://patreon.com/spikespaz)
