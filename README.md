@@ -4,8 +4,6 @@
 
 **Yay! This extension won second place in the very first [Mozilla Firefox Extensions Challenge](https://extensionschallenge.com)!**
 
-**Rewrite coming!!!** Summer is coming up and I'm going to have time to do this right.
-
 [![Version](https://img.shields.io/amo/v/native-dark.svg?style=for-the-badge&label=Version)](https://github.com/spikespaz/firefox-nativedark/releases/latest/)
 [![License](https://img.shields.io/github/license/spikespaz/firefox-nativedark.svg?style=for-the-badge)](https://github.com/spikespaz/firefox-nativedark/blob/master/LICENSE/)
 [![Downloads](https://img.shields.io/amo/d/native-dark.svg?style=for-the-badge)](https://addons.mozilla.org/firefox/addon/native-dark/versions/)
