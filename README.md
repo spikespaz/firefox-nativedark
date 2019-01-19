@@ -19,6 +19,12 @@ Get it at Add-ons for Firefox: https://addons.mozilla.org/firefox/addon/native-d
 
 The theme was originally meant to work with just dark colors, (specifically `#394145`, the darkest color that Windows allows) but while I was making the script to get the system accent colors, the only way to create variations was to create transparent layers of black over top. I accidentally discovered that it would work with other themes, and proceeded to put the below image together.
 
+---
+
+**If you find this software useful and would like to show your appreciation, please consider making a small donation!**
+
+[![Donate](https://spikespaz.com/assets/donate_button_1x.png)](https://spikespaz.com/donate)
+
 ## Examples
 **Below are examples of 11 different accent colors. Only the first is a custom color.**
 
@@ -99,13 +105,3 @@ For more information about what `userChrome.css` is, see the [website for it](ht
 Please submit issues or suggestions to the [Issues page on the GitHub repository](https://github.com/spikespaz/Firefox-NativeDark/issues).
 
 [<sub>Shield badges provided by Shields.io.</sub>](https://shields.io)
-
-## Donations
-
-If you would like to show appreciation for my work, I would gladly accept a small donation!
-
-I will accept donations through PayPal.Me, Buy Me a Coffee, or Patreon.
-
-[![Buy Me a Coffee](https://i.imgur.com/fN422E7.png)](https://buymeacoffee.com/spikespaz)
-[![PayPal.Me](https://i.imgur.com/JWkunGi.png)](https://paypal.me/spikespaz)
-[![Patreon](https://i.imgur.com/K05b2RO.png)](https://patreon.com/spikespaz)
