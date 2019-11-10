@@ -14,7 +14,7 @@ function percentToHex(number) {
 
 function updateWindow(window, colors) {
     browser.theme.update(window.id, {
-        images: { headerURL: "" },
+        images: { theme_frame: "" },
         colors: colors
     });
 }
@@ -27,8 +27,8 @@ function themeWindow(window) {
             switch (themeOptions.unfocusedTheme) {
             case "tabs":
                 updateWindow(window, { // Make tabs white but keep accent background
-                    accentcolor: themeOptions.accentColor,
-                    textcolor: "#fff",
+                    frame: themeOptions.frame,
+                    tab_background_text: "#fff",
                     toolbar: "#fff",
                     toolbar_text: "#000",
                     toolbar_field: "#F9F9FA", // Same color from the default light theme
@@ -39,9 +39,9 @@ function themeWindow(window) {
                 break;
             case "title":
                 updateWindow(window, {
-                    accentcolor: "#fff",
-                    textcolor: "#000",
-                    toolbar: themeOptions.accentColor,
+                    frame: "#fff",
+                    tab_background_text: "#000",
+                    toolbar: themeOptions.frame,
                     toolbar_text: "#fff",
                     toolbar_field: themeOptions.maskColor +  percentToHex(themeOptions.omnibarOpacity - themeOptions.toolbarOpacity),
                     toolbar_field_text: "#fff",
@@ -51,8 +51,8 @@ function themeWindow(window) {
                 break;
             case "both":
                 updateWindow(window, {
-                    accentcolor: "#fff",
-                    textcolor: "#000",
+                    frame: "#fff",
+                    tab_background_text: "#000",
                     toolbar: themeOptions.maskColor + "0f", // 10% darker than white
                     toolbar_text: "#000",
                     toolbar_field: themeOptions.maskColor + "0f", // 20% darker than white
@@ -63,8 +63,8 @@ function themeWindow(window) {
                 break;
             case "fade":
                 updateWindow(window, {
-                    accentcolor: themeOptions.accentColor,
-                    textcolor: "#fff",
+                    frame: themeOptions.frame,
+                    tab_background_text: "#fff",
                     toolbar: "#ffffff" + percentToHex(themeOptions.toolbarOpacity),
                     toolbar_text: "#fff",
                     toolbar_field: "#ffffff" + percentToHex(themeOptions.omnibarOpacity - themeOptions.toolbarOpacity),
@@ -75,8 +75,8 @@ function themeWindow(window) {
                 break;
             case "reset":
                 updateWindow(window, { // Completely default theme colors
-                    accentcolor: "#C7C7C7",
-                    textcolor: "#000",
+                    frame: "#C7C7C7",
+                    tab_background_text: "#000",
                     toolbar: "#F9F9FA",
                     toolbar_text: "#000",
                     toolbar_field: "#fff",
@@ -89,8 +89,8 @@ function themeWindow(window) {
         } else if (window.incognito) {
             // Check if the window is in private browsing and use the full dark theme
             updateWindow(window, {
-                accentcolor: "#222", // A little lighter than the default black
-                textcolor: "#fff",
+                frame: "#222", // A little lighter than the default black
+                tab_background_text: "#fff",
                 toolbar: "#333",
                 toolbar_text: "#fff"
             });
@@ -100,17 +100,17 @@ function themeWindow(window) {
             let borderColor = themeOptions.highlightBorders ? themeOptions.highlightColor : undefined;
 
             updateWindow(window, {
-                accentcolor: themeOptions.accentColor,
+                frame: themeOptions.frame,
                 // icons: "#fff", // Disabled, not needed
                 icons_attention: themeOptions.highlightColor,
-                popup: themeOptions.accentColor,
+                popup: themeOptions.frame,
                 popup_border: borderColor,
                 popup_text: "#fff",
                 tab_line: themeOptions.highlightColor,
                 tab_loading: themeOptions.highlightColor,
                 // tab_selected, // Difference with tab_line?
                 // tab_text: "#000",
-                textcolor: "#fff",
+                tab_background_text: "#fff",
                 toolbar: toolbarMask,
                 toolbar_bottom_separator: themeOptions.bottomSeparator ? themeOptions.highlightColor : undefined,
                 toolbar_field: omnibarMask,
@@ -135,11 +135,11 @@ function initTheme() {
     let pendingPromise = { then: callback => { callback(); } }; // Create a fake Promise that allows .then()
 
     browser.storage.local.get().then(themeOptions => {
-        if (typeof themeOptions.accentColor === "undefined") {
+        if (typeof themeOptions.frame === "undefined") {
             if (typeof pendingPromise === "object") pendingPromise = browser.runtime.getPlatformInfo();
 
             pendingPromise.then(platformInfo => {
-                themeOptions.accentColor = platformInfo.os === "win" ? "-moz-win-accentcolor" : "#505050";
+                themeOptions.frame = platformInfo.os === "win" ? "-moz-win-frame" : "#505050";
             });
         }
         // Default highlight color
