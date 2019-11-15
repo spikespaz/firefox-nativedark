@@ -14,7 +14,7 @@ function percentToHex(number) {
 
 function updateWindow(window, colors) {
     browser.theme.update(window.id, {
-        images: { theme_frame: "" },
+        images: { headerURL: "" },
         colors: colors
     });
 }
