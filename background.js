@@ -14,7 +14,7 @@ function percentToHex(number) {
 
 function updateWindow(window, colors) {
     browser.theme.update(window.id, {
-        images: { headerURL: "" },
+        images: { theme_frame: "" },
         colors: colors
     });
 }
@@ -27,7 +27,7 @@ function themeWindow(window) {
             switch (themeOptions.unfocusedTheme) {
             case "tabs":
                 updateWindow(window, { // Make tabs white but keep accent background
-                    frame: themeOptions.frame,
+                    frame: themeOptions.accentColor,
                     tab_background_text: "#fff",
                     toolbar: "#fff",
                     toolbar_text: "#000",
@@ -41,7 +41,7 @@ function themeWindow(window) {
                 updateWindow(window, {
                     frame: "#fff",
                     tab_background_text: "#000",
-                    toolbar: themeOptions.frame,
+                    toolbar: themeOptions.accentColor,
                     toolbar_text: "#fff",
                     toolbar_field: themeOptions.maskColor +  percentToHex(themeOptions.omnibarOpacity - themeOptions.toolbarOpacity),
                     toolbar_field_text: "#fff",
@@ -63,7 +63,7 @@ function themeWindow(window) {
                 break;
             case "fade":
                 updateWindow(window, {
-                    frame: themeOptions.frame,
+                    frame: themeOptions.accentColor,
                     tab_background_text: "#fff",
                     toolbar: "#ffffff" + percentToHex(themeOptions.toolbarOpacity),
                     toolbar_text: "#fff",
@@ -100,10 +100,10 @@ function themeWindow(window) {
             let borderColor = themeOptions.highlightBorders ? themeOptions.highlightColor : undefined;
 
             updateWindow(window, {
-                frame: themeOptions.frame,
+                frame: themeOptions.accentColor,
                 // icons: "#fff", // Disabled, not needed
                 icons_attention: themeOptions.highlightColor,
-                popup: themeOptions.frame,
+                popup: themeOptions.accentColor,
                 popup_border: borderColor,
                 popup_text: "#fff",
                 tab_line: themeOptions.highlightColor,
@@ -135,11 +135,11 @@ function initTheme() {
     let pendingPromise = { then: callback => { callback(); } }; // Create a fake Promise that allows .then()
 
     browser.storage.local.get().then(themeOptions => {
-        if (typeof themeOptions.frame === "undefined") {
+        if (typeof themeOptions.accentColor === "undefined") {
             if (typeof pendingPromise === "object") pendingPromise = browser.runtime.getPlatformInfo();
 
             pendingPromise.then(platformInfo => {
-                themeOptions.frame = platformInfo.os === "win" ? "-moz-win-frame" : "#505050";
+                themeOptions.accentColor = platformInfo.os === "win" ? "-moz-win-frame" : "#505050";
             });
         }
         // Default highlight color
